@@ -34,22 +34,22 @@
           <div class="hidden md:flex space-x-8">
             <a
               href="#home"
-              class="hover:text-violet-700 dark:hover:text-violet-500transistion-colors"
+              class="hover:text-violet-700 dark:hover:text-violet-500 transition-colors"
               >Home</a
             >
             <a
               href="#about"
-              class="hover:text-violet-700 dark:hover:text-violet-500transistion-colors"
+              class="hover:text-violet-700 dark:hover:text-violet-500 transition-colors"
               >About</a
             >
             <a
               href="#projects"
-              class="hover:text-violet-700 dark:hover:text-violet-500transistion-colors"
+              class="hover:text-violet-700 dark:hover:text-violet-500 transition-colors"
               >Projects</a
             >
             <a
               href="#contact"
-              class="hover:text-violet-700 dark:hover:text-violet-500transistion-colors"
+              class="hover:text-violet-700 dark:hover:text-violet-500 transition-colors"
               >Contact</a
             >
           </div>
@@ -109,22 +109,22 @@
           <div class="flex flex-col space-y-2">
             <a
               href="#home"
-              class="hover:text-violet-700 dark:hover:text-violet-500transistion-colors"
+              class="hover:text-violet-700 dark:hover:text-violet-500 transition-colors"
               >Home</a
             >
             <a
               href="#about"
-              class="hover:text-violet-700 dark:hover:text-violet-500transistion-colors"
+              class="hover:text-violet-700 dark:hover:text-violet-500 transition-colors"
               >About</a
             >
             <a
               href="#projects"
-              class="hover:text-violet-700 dark:hover:text-violet-500transistion-colors"
+              class="hover:text-violet-700 dark:hover:text-violet-500 transition-colors"
               >Projects</a
             >
             <a
               href="#contact"
-              class="hover:text-violet-700 dark:hover:text-violet-500transistion-colors"
+              class="hover:text-violet-700 dark:hover:text-violet-500 transition-colors"
               >Contact</a
             >
           </div>
@@ -561,6 +561,7 @@
                 <a
                   href="https://www.instagram.com/raffi.portfolio/"
                   class="w-12 h-12 bg-violet-600 hover:bg-violet-700 text-white rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg"
+                  target="_blank"
                 >
                   <svg
                     role="img"
@@ -580,6 +581,7 @@
                 <a
                   href="https://www.linkedin.com/in/raffi-irawan-1769ab226/"
                   class="w-12 h-12 bg-violet-600 hover:bg-violet-700 text-white rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg"
+                  target="_blank"
                 >
                   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path
@@ -592,6 +594,7 @@
                 <a
                   href="https://github.com/raffiirawan"
                   class="w-12 h-12 bg-violet-600 hover:bg-violet-700 text-white rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg"
+                  target="_blank"
                 >
                   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path
@@ -605,6 +608,102 @@
         </div>
       </div>
     </section>
+
+    <!-- Footer -->
+    <footer
+      class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 py-8"
+    >
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <p class="text-gray-600 dark:text-gray-400">
+            &copy; 2025 Raffiirawan Portfolio.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Project Gallery Modal -->
+    <div id="project-modal" class="fixed inset-0 z-50 hidden">
+      <div
+        class="modal absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4"
+        onclick="closeProjectModal()"
+      >
+        <div
+          class="bg-white dark:bg-gray-800 rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+          onclick="event.stopPropagation()"
+        >
+          <div class="p-6">
+            <!-- Modal Header -->
+            <div class="flex justify-between items-center mb-6">
+              <h3 id="modal-title" class="text-2xl font-bold"></h3>
+              <button
+                onclick="closeProjectModal()"
+                class="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Project Description -->
+            <p
+              id="modal-description"
+              class="text-gray-600 dark:text-gray-400 mb-6"
+            ></p>
+
+            <!-- Gallery -->
+            <div class="mb-6">
+              <h4 class="text-lg font-semibold mb-4">Screenshot Project</h4>
+              <div
+                id="modal-gallery"
+                class="grid grid-cols-1 md:grid-cols-2 gap-4"
+              >
+                <!-- Screenshots akan ditambahkan via JavaScript -->
+              </div>
+            </div>
+
+            <!-- Technologies -->
+            <div class="mb-6">
+              <h4 class="text-lg font-semibold mb-3">
+                Teknologi yang Digunakan
+              </h4>
+              <div id="modal-technologies" class="flex flex-wrap gap-2">
+                <!-- Technologies akan ditambahkan via JavaScript -->
+              </div>
+            </div>
+
+            <!-- Links -->
+            <div class="flex space-x-3">
+              <a
+                id="modal-demo-link"
+                href="#"
+                class="px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition-colors"
+              >
+                Live Demo
+              </a>
+              <a
+                id="modal-github-link"
+                href="#"
+                class="px-6 py-3 border border-primary-600 text-primary-600 hover:bg-primary-50 dark:hover:bg-primary-900 rounded-lg transition-colors"
+              >
+                GitHub Repository
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="./src/script.js"></script>
   </body>
