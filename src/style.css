@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+.slider-container {
+  scroll-snap-type: x mandatory;
+}
+.slider-item {
+  scroll-snap-align: start;
+}
+.modal {
+  backdrop-filter: blur(8px);
+}

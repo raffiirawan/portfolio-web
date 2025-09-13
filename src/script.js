@@ -1,8 +1,80 @@
+// Data project untuk modal
+const projects = [
+  {
+    title: "Coffee Shop Website",
+    description:
+      "Website company profile untuk coffee shop yang menampilkan informasi menu coffee shop dan kontak.",
+    technologies: ["HTML", "Tailwind CSS", "Laravel"],
+    screenshots: [
+      "assets/projects/coffee-shop/hero-home-page.png",
+      "assets/projects/coffee-shop/cta-home-page.png",
+      "assets/projects/coffee-shop/about-page.png",
+      "assets/projects/coffee-shop/products-page.png",
+      "assets/projects/coffee-shop/contact-page.png",
+    ],
+    projectLink: "https://github.com/raffiirawan/coffee-shop2",
+  },
+  {
+    title: "Movie Streaming Wesite",
+    description:
+      "Website streaming film sederhana yang dibuat dengan PHP dan MySQL. Menampilkan daftar film, detail film, dan fitur streaming. Dilengkapi dengan sistem login dan pendaftaran user.",
+    technologies: ["HTML", "CSS", "PHP", "MySQL"],
+    screenshots: [
+      "assets/projects/movie-streaming/home-page.png",
+      "assets/projects/movie-streaming/single-movie-page.png",
+      "assets/projects/movie-streaming/admin-dashboard-page.png",
+    ],
+    projectLink: "https://github.com/raffiirawan/project-wtwa-smt1-reupload",
+  },
+  {
+    title: "Plaza Ambarrukmo",
+    description:
+      "Website company profile untuk Plaza Ambarrukmo yang menampilkan informasi tenant, event, dan kontak. Dibangun dengan WordPress dan Elementor untuk kemudahan pengelolaan konten.",
+    technologies: ["WordPress", "Elementor"],
+    screenshots: [
+      "assets/projects/amplaz/hero-section.png",
+      "assets/projects/amplaz/event-section.png",
+      "assets/projects/amplaz/about-us.png",
+      "assets/projects/amplaz/mall-facilities.png",
+      "assets/projects/amplaz/brand-directory.png",
+    ],
+    projectLink: "http://plaza-ambarrukmo.co.id/",
+  },
+  {
+    title: "Porta by Ambarrukmo",
+    description:
+      "Website company profile untuk hotel Porta by Ambarrukmo yang menampilkan informasi kamar, fasilitas, dan kontak. Dibangun dengan WordPress dan Elementor untuk kemudahan pengelolaan konten.",
+    technologies: ["WordPress", "Elementor"],
+    screenshots: [
+      "assets/projects/porta/hero-home-page.png",
+      "assets/projects/porta/rooms-page.png",
+      "assets/projects/porta/single-room-page.png",
+      "assets/projects/porta/facilities-page.png",
+      "assets/projects/porta/packages-page.png",
+    ],
+    projectLink: "https://porta.co.id/",
+  },
+  {
+    title: "Melamin Toptree",
+    description:
+      "Website company profile untuk Melamin Toptree, perusahaan alat makan melamin. Menampilkan katalog produk, informasi perusahaan, dan kontak. Dibangun dengan WordPress dan Elementor untuk kemudahan pengelolaan konten.",
+    technologies: ["WordPress", "Elementor"],
+    screenshots: [
+      "assets/projects/melamin-toptree/hero-home-page.png",
+      "assets/projects/melamin-toptree/about-page.png",
+      "assets/projects/melamin-toptree/product-page.png",
+      "assets/projects/melamin-toptree/single-product-page.png",
+    ],
+    projectLink: "https://melamintoptree.com/",
+  },
+];
+
 // Dark Mode Toggle
 const themeToggle = document.getElementById("theme-toggle");
 const sunIcon = document.getElementById("sun-icon");
 const moonIcon = document.getElementById("moon-icon");
 
+// Check for saved theme or default to light mode
 const savedTheme = localStorage.getItem("theme") || "light";
 if (savedTheme === "dark") {
   document.documentElement.classList.add("dark");
@@ -52,4 +124,84 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       });
     }
   });
+});
+
+// Project Slider Navigation
+const slider = document.getElementById("project-slider");
+const prevBtn = document.getElementById("slider-prev");
+const nextBtn = document.getElementById("slider-next");
+
+prevBtn.addEventListener("click", () => {
+  slider.scrollBy({ left: -320, behavior: "smooth" });
+});
+
+nextBtn.addEventListener("click", () => {
+  slider.scrollBy({ left: 320, behavior: "smooth" });
+});
+
+// Project Modal Functions
+function openProjectModal(projectIndex) {
+  const project = projects[projectIndex];
+  const modal = document.getElementById("project-modal");
+
+  // Set modal content
+  document.getElementById("modal-title").textContent = project.title;
+  document.getElementById("modal-description").textContent =
+    project.description;
+
+  // Set technologies
+  const techContainer = document.getElementById("modal-technologies");
+  techContainer.innerHTML = "";
+  project.technologies.forEach((tech) => {
+    const span = document.createElement("span");
+    span.className =
+      "px-3 py-1 bg-violet-100 dark:bg-violet-900 text-violet-800 dark:text-violet-200 rounded-full text-sm";
+    span.textContent = tech;
+    techContainer.appendChild(span);
+  });
+
+  // Set gallery
+  const gallery = document.getElementById("modal-gallery");
+  gallery.innerHTML = "";
+  project.screenshots.forEach((screenshot, index) => {
+    const div = document.createElement("div");
+    div.className =
+      "aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden";
+    div.innerHTML = `<img src="${screenshot}" alt="Screenshot ${
+      index + 1
+    }" class="w-full h-full object-cover">`;
+    gallery.appendChild(div);
+  });
+
+  // Set project link
+  document.getElementById("modal-project-link").href = project.projectLink;
+
+  // Show modal
+  modal.classList.remove("hidden");
+  document.body.style.overflow = "hidden";
+}
+
+function closeProjectModal() {
+  const modal = document.getElementById("project-modal");
+  modal.classList.add("hidden");
+  document.body.style.overflow = "auto";
+}
+
+// Close modal with Escape key
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    closeProjectModal();
+  }
+});
+
+// Navbar background change on scroll
+window.addEventListener("scroll", () => {
+  const navbar = document.querySelector("nav");
+  if (window.scrollY > 50) {
+    navbar.classList.add("bg-white/95", "dark:bg-gray-900/95");
+    navbar.classList.remove("bg-white/80", "dark:bg-gray-900/80");
+  } else {
+    navbar.classList.add("bg-white/80", "dark:bg-gray-900/80");
+    navbar.classList.remove("bg-white/95", "dark:bg-gray-900/95");
+  }
 });
