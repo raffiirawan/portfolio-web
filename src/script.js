@@ -3,7 +3,7 @@ const projects = [
   {
     title: "Coffee Shop Website",
     description:
-      "Website company profile untuk coffee shop yang menampilkan informasi menu coffee shop dan kontak.",
+      "Website company profile dan katalog produk untuk sebuah coffee shop. Menampilkan informasi tentang menu, lokasi, dan kontak. Dibangun dengan HTML, Tailwind CSS, dan Laravel untuk backend.",
     technologies: ["HTML", "Tailwind CSS", "Laravel"],
     screenshots: [
       "assets/projects/coffee-shop/hero-home-page.png",
@@ -16,7 +16,7 @@ const projects = [
   {
     title: "Plaza Ambarrukmo",
     description:
-      "Website company profile untuk Plaza Ambarrukmo yang menampilkan informasi tenant, event, dan kontak. Dibangun dengan WordPress dan Elementor untuk kemudahan pengelolaan konten.",
+      "Website company profile untuk Plaza Ambarrukmo yang menampilkan informasi lokasi tenant, event mall, serta kontak. Dibangun dengan WordPress dan Elementor untuk kemudahan pengelolaan konten.",
     technologies: ["WordPress", "Elementor"],
     screenshots: [
       "assets/projects/amplaz/hero-section.png",
@@ -29,7 +29,7 @@ const projects = [
   {
     title: "Porta by Ambarrukmo",
     description:
-      "Website company profile untuk hotel Porta by Ambarrukmo yang menampilkan informasi kamar, fasilitas, dan kontak. Dibangun dengan WordPress dan Elementor untuk kemudahan pengelolaan konten.",
+      "Website company profile untuk hotel Porta by Ambarrukmo yang menampilkan informasi kamar, fasilitas, layanan hotel, dan kontak. Dibangun dengan WordPress dan Elementor untuk kemudahan pengelolaan konten.",
     technologies: ["WordPress", "Elementor"],
     screenshots: [
       "assets/projects/porta/hero-home-page.png",
@@ -42,7 +42,7 @@ const projects = [
   {
     title: "Melamin Toptree",
     description:
-      "Website company profile untuk Melamin Toptree, perusahaan alat makan melamin. Menampilkan katalog produk, informasi perusahaan, dan kontak. Dibangun dengan WordPress dan Elementor untuk kemudahan pengelolaan konten.",
+      "Website company profile untuk perusahaan Melamin Toptree, perusahaan yang bergerak di bidang produksi alat makan melamin. Menampilkan katalog produk, informasi perusahaan, dan kontak. Dibangun dengan WordPress dan Elementor untuk kemudahan pengelolaan konten.",
     technologies: ["WordPress", "Elementor"],
     screenshots: [
       "assets/projects/melamin-toptree/hero-home-page.png",
