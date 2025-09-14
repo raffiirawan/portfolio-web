@@ -12,19 +12,6 @@ const projects = [
       "assets/projects/coffee-shop/products-page.png",
       "assets/projects/coffee-shop/contact-page.png",
     ],
-    projectLink: "https://github.com/raffiirawan/coffee-shop2",
-  },
-  {
-    title: "Movie Streaming Wesite",
-    description:
-      "Website streaming film sederhana yang dibuat dengan PHP dan MySQL. Menampilkan daftar film, detail film, dan fitur streaming. Dilengkapi dengan sistem login dan pendaftaran user.",
-    technologies: ["HTML", "CSS", "PHP", "MySQL"],
-    screenshots: [
-      "assets/projects/movie-streaming/home-page.png",
-      "assets/projects/movie-streaming/single-movie-page.png",
-      "assets/projects/movie-streaming/admin-dashboard-page.png",
-    ],
-    projectLink: "https://github.com/raffiirawan/project-wtwa-smt1-reupload",
   },
   {
     title: "Plaza Ambarrukmo",
@@ -38,7 +25,6 @@ const projects = [
       "assets/projects/amplaz/mall-facilities.png",
       "assets/projects/amplaz/brand-directory.png",
     ],
-    projectLink: "http://plaza-ambarrukmo.co.id/",
   },
   {
     title: "Porta by Ambarrukmo",
@@ -52,7 +38,6 @@ const projects = [
       "assets/projects/porta/facilities-page.png",
       "assets/projects/porta/packages-page.png",
     ],
-    projectLink: "https://porta.co.id/",
   },
   {
     title: "Melamin Toptree",
@@ -65,7 +50,19 @@ const projects = [
       "assets/projects/melamin-toptree/product-page.png",
       "assets/projects/melamin-toptree/single-product-page.png",
     ],
-    projectLink: "https://melamintoptree.com/",
+  },
+  {
+    title: "Omnicreapro",
+    description:
+      "Website company profile untuk Omnicreapro yang merupakan perusahaan yang bergerak di bidang Event Organizer. Menampilkan layanan, portofolio, dan kontak. Dibangun dengan WordPress dan Elementor untuk kemudahan pengelolaan konten.",
+    technologies: ["WordPress", "Elementor"],
+    screenshots: [
+      "assets/projects/omnicreapro/hero-home-page.png",
+      "assets/projects/omnicreapro/about-section.png",
+      "assets/projects/omnicreapro/service-section.png",
+      "assets/projects/omnicreapro/service-page.png",
+      "assets/projects/omnicreapro/portfolio-page.png",
+    ],
   },
 ];
 
@@ -172,9 +169,6 @@ function openProjectModal(projectIndex) {
     }" class="w-full h-full object-cover">`;
     gallery.appendChild(div);
   });
-
-  // Set project link
-  document.getElementById("modal-project-link").href = project.projectLink;
 
   // Show modal
   modal.classList.remove("hidden");
